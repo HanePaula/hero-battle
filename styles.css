@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap');
+
+:root {
+    --fundo: #23272A;
+    --branco: #FFFFFF;
+    --botao: #7289DA;
+    --input: #A0A0A0;
+    --fonte-principal: 'Roboto';
+    --fonte-secundaria: 'Press Start 2P';
+    --preto: #000000;
+}
+
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 5rem;
+}
+
+.apresentacao-titulo {
+    font-family: var(--fonte-secundaria);
+    font-size: 50px;
+}
+
+.apresentacao-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.formulario-titulo {
+    font-size: 50px;
+}
+
+.formulario-input {
+    width: 90%; 
+    margin: auto;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--input); 
+    color: var(--preto); 
+}
+
+.formulario-botao {
+    width: 50%; 
+    margin: auto;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--botao); 
+    color: var(--branco); 
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-input:focus {
+    outline: none;
+}
+
+.formulario-botao:hover {
+    background-color: #5A78F0;
+}
+
+.apresentacao-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--branco);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-icone {
+    width: 100px;
+    height: 100px;
+}
+
+.card-icone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-texto {
+    font-family: var(--fonte-secundaria);
+    font-size: 20px;
+    color: var(--branco);
+    text-align: center;
+}
+
+@media (max-width: 780px) {
+    .apresentacao-titulo {
+        font-size: 30px;
+    }
+
+    .formulario-titulo {
+        font-size: 30px;
+    }
+
+    .formulario-input {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .formulario-botao {
+        width: 60%;
+        font-size: 14px;
+    }
+
+    .apresentacao-cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 5px;
+    }
+
+    .card-icone {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-texto {
+        font-size: 15px;
+    }
+}
+
+
+
