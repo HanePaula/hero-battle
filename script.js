@@ -5,6 +5,41 @@ const formularioBotao = document.getElementById('botao');
 const apresentacao = document.getElementById('apresentacao');
 let contadorRespostas = 0;
 
+class Heroi {
+    constructor(nome,idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    setTipo(tipo) {
+        this.tipo = tipo;
+    }
+
+    ataque() {
+        let texto;
+
+        switch (this.tipo) {
+            case 'Mago':
+                texto = `O ${this.tipo} atacou usando magia.`
+                break;
+            
+            case 'Guerreiro':
+                texto = `O ${this.tipo} atacou usando espada.`
+                break;
+
+            case `Monge`:
+                texto = `O ${this.tipo} atacou usando artes marciais.`
+                break;
+
+            case `Ninja`:
+                texto = `O ${this.tipo} atacou usando shuriken.`
+                break;
+        }
+
+        return texto;
+    }
+}
+
 formulario.addEventListener('submit', (submit) => {
     submit.preventDefault();
     contadorRespostas++;
@@ -20,6 +55,9 @@ formulario.addEventListener('submit', (submit) => {
 
     else if (contadorRespostas === 2) {
         resposta.dataset.idade = resposta.value;
+
+        let nome = resposta.dataset.nome;
+        let idade = resposta.dataset.idade;
 
         apresentacao.removeChild(apresentacao.children[1]);
 
@@ -64,6 +102,24 @@ formulario.addEventListener('submit', (submit) => {
     </div>`
 
         apresentacao.appendChild(divNova);
-        
+
+        let heroi = new Heroi(nome, idade);
+
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach((card) => {
+            card.addEventListener('click', () => {
+                let filhos = card.children;
+                let texto = filhos[1];
+                let tipo = texto.children[0].innerText;
+                
+                heroi.setTipo(tipo);
+
+                console.log(heroi.nome);
+                console.log(heroi.idade);
+                console.log(heroi.tipo);
+            })
+        })
+
     }
 })
