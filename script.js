@@ -142,6 +142,20 @@ formulario.addEventListener('submit', (submit) => {
             logDeBatalha.setAttribute('id', 'log');
             logDeBatalha.innerHTML = `<p>Log da batalha</p>`;
             apresentacao.appendChild(logDeBatalha);
+
+            botaoRecarregar.addEventListener('click', () => {
+                window.location.reload();
+            })
+
+            const botaoAtaque = document.getElementById('atacar');
+
+            botaoAtaque.addEventListener('click', () => {
+                let ataque = heroi.ataque();
+                
+                const pAtaque = document.createElement('p');
+                pAtaque.innerText = ataque;
+                logDeBatalha.appendChild(pAtaque);
+            })
             })
         })
 
