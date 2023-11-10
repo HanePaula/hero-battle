@@ -115,9 +115,33 @@ formulario.addEventListener('submit', (submit) => {
                 
                 heroi.setTipo(tipo);
 
-                console.log(heroi.nome);
-                console.log(heroi.idade);
-                console.log(heroi.tipo);
+                apresentacao.removeChild(apresentacao.children[1]);
+
+                const botaoRecarregar = document.createElement('button');
+                botaoRecarregar.className = "novo-heroi";
+                botaoRecarregar.setAttribute('id', 'novo-heroi');
+                botaoRecarregar.innerText = 'Novo Herói';
+                apresentacao.appendChild(botaoRecarregar);
+
+                const cardHeroi = document.createElement('div');
+                cardHeroi.className = "apresentacao-card";
+                cardHeroi.setAttribute('id', 'card');
+                cardHeroi.innerHTML = `<div class="card-icone">
+                <img src="assets/${heroi.tipo.toLowerCase()}.jpeg" alt="${heroi.tipo}">
+            </div>
+            <div class="card-texto">
+                <p>Nome: ${heroi.nome}</p>
+                <p>Idade: ${heroi.idade}</p>
+                <p>Classe: ${heroi.tipo}</p>
+            </div>
+            <button class="card-botao" id="atacar">Atacar</button>`
+            apresentacao.appendChild(cardHeroi);
+
+            const logDeBatalha = document.createElement('div');
+            logDeBatalha.className = "apresentacao-log";
+            logDeBatalha.setAttribute('id', 'log');
+            logDeBatalha.innerHTML = `<p>Log da batalha</p>`;
+            apresentacao.appendChild(logDeBatalha);
             })
         })
 

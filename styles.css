@@ -108,6 +108,73 @@
     text-align: center;
 }
 
+.novo-heroi {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--botao); 
+    color: var(--branco); 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.novo-heroi:hover {
+    background-color: #5A78F0;
+}
+
+.apresentacao-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 2px solid var(--branco);
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 400px;
+}
+
+.card-botao {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--botao); 
+    color: var(--branco); 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-botao:hover {
+    background-color: #5A78F0;
+}
+
+.apresentacao-log {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 2px solid var(--branco);
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.apresentacao-log p {
+    font-family: var(--fonte-secundaria);
+    font-size: 15px;
+    color: var(--branco);
+    text-align: center;
+}
+
 @media (max-width: 780px) {
     .apresentacao-titulo {
         font-size: 30px;
@@ -144,6 +211,28 @@
 
     .card-texto {
         font-size: 15px;
+    }
+
+    .novo-heroi {
+        font-size: 14px;
+    }
+
+    .apresentacao-card {
+        width: 200px;
+        height: 300px;
+    }
+
+    .card-botao {
+        font-size: 14px;
+    }
+
+    .apresentacao-log {
+        width: 300px;
+        height: 150px;
+    }
+
+    .apresentacao-log p {
+        font-size: 10px;
     }
 }
 
